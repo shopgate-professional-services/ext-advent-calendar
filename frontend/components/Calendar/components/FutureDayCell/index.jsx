@@ -31,8 +31,7 @@ const FutureDayCell = ({ day, onActivateDay }) => {
       <span>
         {frontImage
           ? ''
-          : frontLabel || day
-        }
+          : frontLabel || day}
       </span>
     </Grid.Item>
   );

@@ -30,8 +30,7 @@ const ExpiredDayCell = ({ day }) => {
       <span>
         {frontImage
           ? ''
-          : frontLabel || day
-        }
+          : frontLabel || day}
       </span>
     </Grid.Item>
   );

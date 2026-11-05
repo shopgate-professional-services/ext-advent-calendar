@@ -1,5 +1,5 @@
 import React, {
-  Fragment, useCallback, useEffect, useState,
+  useCallback, useEffect, useState,
 } from 'react';
 import { ToastProvider, UIEvents } from '@shopgate/engage/core';
 import { Grid } from '@shopgate/engage/components';
@@ -11,9 +11,10 @@ import Snowfall from '../Snowfall';
 import {
   getCalendarDayConfig, getCalendarDays, isDayExpired, isFutureDay,
 } from '../../helpers';
-import { messages, calendarGrid } from '../../config';
+import config from '../../config.json';
 import { styles } from './styles';
 
+const { messages, calendarGrid } = config;
 const { fallingSnow, sheetDelay = 1500 } = calendarGrid;
 
 /**
@@ -60,7 +61,7 @@ const Calendar = () => {
   const dayConfig = getCalendarDayConfig(activeDay);
 
   return (
-    <Fragment>
+    <>
       <div className={styles.gridWrapper}>
         {fallingSnow && <Snowfall />}
 
@@ -99,7 +100,7 @@ const Calendar = () => {
         onClose={() => setShowSheet(false)}
       />
 
-    </Fragment>
+    </>
   );
 };
 

@@ -6,10 +6,10 @@ import CloseButton from '../../components/CloseButton';
 import Calendar from '../../components/Calendar';
 import ComingSoon from '../../components/ComingSoon';
 import { isCalendarAllowed } from '../../helpers';
-import { calendarPage } from '../../config';
+import config from '../../config.json';
 import { CALENDAR_ROUTE } from '../../constants';
 
-const { image, styles: pageStyles, texts = {} } = calendarPage;
+const { image, styles: pageStyles, texts = {} } = config.calendarPage;
 
 const styles = {
   page: css(pageStyles),

@@ -1,8 +1,13 @@
 import shuffle from 'lodash/shuffle';
-import { calendarGrid, calendar } from './config';
+import config from './config.json';
+
+const { calendarGrid, calendar } = config;
 
 const { randomizeNumbers } = calendarGrid;
 
+/**
+ * @returns {Date} The current date, or the date set via window.Engage.date for testing.
+ */
 const getNowDate = () => new Date((
   window.Engage && window.Engage.date ? window.Engage.date : new Date()
 ).getTime());
