@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'glamor';
 import { useNavigation } from '@shopgate/engage/core';
 import {
   SheetDrawer, HtmlSanitizer, Link, SurroundPortals,
 } from '@shopgate/engage/components';
-import { rewardSheet } from '../../config';
+import config from '../../config.json';
 
-const { styles: rewardSheetStyles, headerImage } = rewardSheet;
+const { styles: rewardSheetStyles, headerImage } = config.rewardSheet;
 
 const styles = {
   sheet: css({
@@ -55,6 +55,11 @@ const styles = {
 const RewardSheet = ({ isOpen, content, onClose }) => {
   const { push } = useNavigation();
 
+  /**
+   * Navigates to the reward link.
+   * @param {string} pathname The link to open.
+   * @param {string} [target] Optional link target.
+   */
   const handleClick = (pathname, target) => {
     push({
       pathname,
@@ -76,7 +81,7 @@ const RewardSheet = ({ isOpen, content, onClose }) => {
         }}
       >
         {content && (
-          <Fragment>
+          <>
             <div className={styles.content}>
               {headerImage && (
                 <div className={styles.image}>
@@ -120,7 +125,7 @@ const RewardSheet = ({ isOpen, content, onClose }) => {
                 {content.buttonText}
               </Link>
             )}
-          </Fragment>
+          </>
         )}
       </SurroundPortals>
     </SheetDrawer>

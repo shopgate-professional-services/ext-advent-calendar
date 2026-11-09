@@ -1,7 +1,7 @@
 import { css } from 'glamor';
-import { calendarGrid } from '../../config';
+import config from '../../config.json';
 
-const { styles: configStyles } = calendarGrid;
+const { styles: configStyles } = config.calendarGrid;
 
 export const styles = {
   gridWrapper: css({

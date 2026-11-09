@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { css } from 'glamor';
 import { CountdownTimer } from '@shopgate/engage/components';
 import { getCountDownSeconds } from '../../helpers';
-import { messages } from '../../config';
+import config from '../../config.json';
 
 export const styles = {
   p: css({
@@ -19,14 +19,14 @@ export const styles = {
  * @returns {JSX}
  */
 const ComingSoon = () => (
-  <Fragment>
+  <>
     <p className={styles.p}>
-      {messages.calendarTooEarly}
+      {config.messages.calendarTooEarly}
     </p>
     <p className={styles.timer}>
       <CountdownTimer timeout={getCountDownSeconds()} />
     </p>
-  </Fragment>
+  </>
 );
 
 export default ComingSoon;

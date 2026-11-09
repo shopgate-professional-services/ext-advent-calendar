@@ -25,16 +25,14 @@ const ActiveDayCell = ({ day, onActivateDay }) => {
           <span>
             {frontImage
               ? ''
-              : frontLabel || day
-            }
+              : frontLabel || day}
           </span>
         )}
         back={(
           <span>
             {backImage
               ? ''
-              : backLabel || '😀'
-            }
+              : backLabel || '😀'}
           </span>
         )}
         onFlip={() => onActivateDay(day)}
